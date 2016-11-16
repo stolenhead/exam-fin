@@ -1,0 +1,27 @@
+{
+  "name": "indeed",
+  "version": "1.0.0",
+  "description": "ajax json ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stolenhead/exam-fin.git"
+  },
+  "keywords": [
+    "js",
+    "ajax",
+    "express"
+  ],
+  "author": "Andrea Cabrera",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stolenhead/exam-fin/issues"
+  },
+  "homepage": "https://github.com/stolenhead/exam-fin#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

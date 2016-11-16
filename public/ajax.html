@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exam-FIN</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.css" media="screen"/>
+	<link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<div id="map_canvas"></div>
+  <div class="gift col-xs-12 letra z-index">Exam-Final</div>     
+  <div class="col-m-d12">
+    <input class="jobname" id="jobname" type="text" value="" name="jobname">
+<input class="location" id="location" type="text" value="" name="location">
+<input type="submit" id="searchResult" value="Find Jobs" class="">
+<div id="jobs-data"></div>
+<div style="clear:both;"></div>
+<div id="pagination"></div>
+
+  </div> 
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src ="js/ajax.js"></script>
+
+<script type="text/javascript">
+function initialize(address) {
+  var geoCoder = new google.maps.Geocoder(address)
+  var request = {address:address};
+  geoCoder.geocode(request, function(result, status){
+    var latlng = new google.maps.LatLng(result[0].geometry.location.lat(), result[0].geometry.location.lng());
+    var myOptions = {
+      zoom: 15,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),myOptions);
+    var marker = new google.maps.Marker({position:latlng,map:map,title:'title'});
+  })
+  }
+  </script>
+</body>
+</html>
